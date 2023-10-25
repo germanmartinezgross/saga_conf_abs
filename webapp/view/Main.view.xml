@@ -1,0 +1,57 @@
+<mvc:View controllerName="andina.sagaconfabs.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Panel>
+                <FlexBox class="princ" height="2rem" justifyContent="Center" alignItems="Center">
+                    <items>
+                        <Button text="Ingresar QR Rotulo" icon="sap-icon://bar-code" press="onQRScan" type="Emphasized"
+                            class="sapUiSmallMarginEnd"></Button>
+                        <Label labelFor="rotulo"></Label>
+                        <Input id="rotulo" class="sapUiSmallMarginEnd" placeholder="Rotulo"></Input>
+                        <Button id="butDel" class="sapUiSmallMarginBegin" icon="sap-icon://sys-cancel" type="Reject"
+                            press="deleteId" visible="false"></Button>
+                        <Button id="butSearch" class="sapUiSmallMarginBegin" icon="sap-icon://search" type="Default"
+                            press="searchId" visible="true"></Button>
+                    </items>
+                </FlexBox>
+                <FlexBox class="princ" height="2rem" justifyContent="Center" alignItems="Center">
+                    <items>
+                        <Label labelFor="rotulo"></Label>
+                        <Text id="matnr" class="sapUiSmallMarginEnd"></Text>
+                        <Label labelFor="rotulo" class="sapUiSmallMarginEnd"></Label>
+                        <Text id="descripcion"></Text>
+
+                    </items>
+                </FlexBox>
+
+                <FlexBox class="princ" height="4rem" justifyContent="Center" alignItems="Center">
+                    <items>
+                        <Label labelFor="destino"></Label>
+                        <ComboBox id="destino" placeholder="Destino" items="{ path: 'origenDestino>/results' }">
+                            <core:Item key="{origenDestino>lgort}" text="{origenDestino>denominacion}" />
+                        </ComboBox>
+                    </items>
+                </FlexBox>
+
+                <FlexBox class="princ" height="4rem" justifyContent="Center" alignItems="Center">
+                    <items>
+                        <Label labelFor="op"></Label>
+                        <Input id="op" placeholder="Orden de Proceso"></Input>
+                    </items>
+                </FlexBox>
+
+                <FlexBox class="princ" height="3rem" justifyContent="Center" alignItems="Center">
+                    <items>
+                        <!-- <Button class="sapUiSmallMarginEnd" text="Cancelar" icon="sap-icon://cancel" press="onQRScan"
+                            type="Emphasized"></Button> -->
+                        <Button class="sapUiSmallMarginEnd" text="Confirmar" icon="sap-icon://accept" press="onQRScan"
+                            type="Emphasized"></Button>
+
+                    </items>
+                </FlexBox>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
